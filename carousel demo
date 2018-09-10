@@ -1,1 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>LoopZine TV DEMO  based on Pure-CSS Netflix Show Carousel </title>
+
+<style>
+body,
+html {
+  padding: 0 10px;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  text-shadow: 1px 1px 1px #000;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode:luminosity;
+}
+* {
+  box-sizing: border-box;
+}
+   ::-webkit-scrollbar{
+        height: 4px;
+        width: 4px;
+        background: gray;
+    }
+
+.contain {
+  width: 100%;
+  height: 100%;
+
+}
+.row {
+  overflow-y: hidden;
+  overflow-x: scroll;
+  width: 100%;
+}
+.row__inner {
+  transition: 450ms -webkit-transform;
+  transition: 450ms transform;
+  transition: 450ms transform, 450ms -webkit-transform;
+  font-size: 0;
+  white-space: nowrap;
+  margin: 45.3125px 0;
+  padding-bottom: 0px;
+	margin-left: 70px;
+	margin-right: 270px;
+}
+.tile {
+  position: relative;
+  display: inline-block;
+  width: 250px;
+  height: 140.625px;
+  margin-right: 10px;
+  font-size: 20px;
+  color:white
+  cursor: pointer;
+  transition: 450ms all;
+  -webkit-transform-origin: center left;
+          transform-origin: center left;
+}
+.tile__img {
+  width: 250px;
+  height: 140.625px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.tile__details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  font-size: 10px;
+  opacity: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+  transition: 450ms opacity;
+}
+.tile__details:after,
+.tile__details:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: #000;
+}
+.tile__details:after {
+  margin-top: -25px;
+  margin-left: -25px;
+  width: 50px;
+  height: 50px;
+  border: 3px solid #ecf0f1;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1;
+}
+.tile__details:before {
+  content: '▶';
+  left: 0;
+  width: 100%;
+  font-size: 30px;
+  color:white;
+  margin-left: 7px;
+  margin-top: -18px;
+  text-align: center;
+  z-index: 2;
+}
+.tile:hover .tile__details {
+  opacity: 1;
+}
+.tile__title {
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+}
+.row__inner:hover {
+  -webkit-transform: translate3d(-62.5px, 0, 0);
+          transform: translate3d(-62.5px, 0, 0);
+}
+.row__inner:hover .tile {
+  opacity: 0.3;
+}
+.row__inner:hover .tile:hover {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  opacity: 1;
+}
+.tile:hover ~ .tile {
+  -webkit-transform: translate3d(125px, 0, 0);
+          transform: translate3d(125px, 0, 0);
+}
+</style>
+
+</head>
+
+<body BGCOLOR="#000000" LINK="#FF0000" VLINK="#FF0000" onload="changeBGImage(0)"  >
+<script language="JavaScript">
+<!--
+
+// Copyright 2001 by www.CodeBelly.com
+// Please do *not* remove this notice.
+
+var backImage = new Array(); // don't change this
+
+
+
+// Enter the image filenames you wish to use.
+// Follow the pattern to use more images.  The
+// number in the brackets [] is the number you
+// will use in the function call to pick each
+// image.
+
+
+backImage[0] = "http://loopzine.tv/img/bkgnd.jpg";
+backImage[1] = "http://loopzine.tv/img/p_36.jpg";
+backImage[2] = "http://loopzine.tv/img/p_107.jpg";
+backImage[3] = "http://loopzine.tv/img/p_127.jpg";
+backImage[4] = "http://loopzine.tv/img/p_190.jpg";
+backImage[5] = "http://loopzine.tv/img/p_79.jpg";
+
+// Do not edit below this line.
+//-----------------------------
+
+function changeBGImage(whichImage){
+if (document.body){
+document.body.background = backImage[whichImage];
+}
+}
+
+//-->
+</script>
+
+  <div class="contain"  style="color:white">
+<br><br><br>
+<CENTER>  <p style="color:white">
+     Inspired by  "Pure CSS Netflix Video Carousel" <a href="https://codepen.io/joshhunt/pen/LVQZRa">example pen</a> by <a href="https://codepen.io/joshhunt/">Josh Hunt</a><br>
+Other coding including active links to <a href="https://www.youtube.com/user/rggeiger1">original animations</a><br>
+ from the <a href="http:loopzine.tv">web zine</a> and <a href="http://www.CodeBelly.com/javascript/backimagechange.html">javascript</a> to add hero background graphics<br> added by RG Geiger.
+  </p></CENTER>
+<br><br><br><br>
+ <H1>&nbsp;&nbsp;PocketLoop - animated darkwave music webzine</h1><i>&nbsp;&nbsp;&nbsp;&nbsp;Selections from Issue 69 and 70 (FALL 2003)</i>
+  <div class="row">
+    <div class="row__inner">
+     <div class="tile" >
+<a href="https://www.youtube.com/embed/kr3bIBms9HY?autoplay=1&rel=0" onmouseover="changeBGImage(1)" onmouseout="changeBGImage(0)">
+        <div class="tile__media" >
+          <img class="tile__img" src="http://loopzine.tv/img/p_36.jpg"  alt=""  />
+        </div>
+        <div  class="tile__details">
+          <div  class="tile__title" style="color:white">
+            Charmed-TV Soundtrack<br>The sountrack for the hit TV show Charmed
+          </div>
+        </div>      
+</a>
+     </div>
+
+      <div class="tile">
+<a href="https://www.youtube.com/embed/TozYFSFazFc?autoplay=1&rel=0" onmouseover="changeBGImage(2)" onmouseout="changeBGImage(0)">
+        <div class="tile__media">
+          <img class="tile__img" src="http://loopzine.tv/img/p_107.jpg" alt=""  />
+        </div>
+        <div class="tile__details">
+          <div class="tile__title" style="color:white">
+            Midnight Syndicate<br>Offical Dungeons and Dragons background music
+          </div>
+        </div>
+</a>
+      </div>
+
+      <div class="tile">
+<a href="https://www.youtube.com/embed/nHIiBHjYWUg?autoplay=1&rel=0" onmouseover="changeBGImage(3)" onmouseout="changeBGImage(0)">
+        <div class="tile__media">
+          <img class="tile__img" src="http://loopzine.tv/img/p_127.jpg" alt=""  />
+        </div>
+        <div class="tile__details">
+          <div class="tile__title" style="color:white">
+            Pissing Razors<br>high fueled El Paso metal sonic attack
+          </div>
+        </div>
+</a>
+      </div>
+
+      <div class="tile">
+<a href="https://www.youtube.com/embed/W1v-AOUk5bs?autoplay=1&rel=0" onmouseover="changeBGImage(4)" onmouseout="changeBGImage(0)">
+        <div class="tile__media">
+          <img class="tile__img" src="http://loopzine.tv/img/p_190.jpg" alt=""  />
+        </div>
+        <div class="tile__details">
+          <div class="tile__title" style="color:white">
+            Repentance Born<br>Alternative Dark Euro Metal from Whales
+          </div>
+        </div>
+</a>
+      </div>
+
+      <div class="tile">
+<a href="https://www.youtube.com/embed/Tdl5XOG8Fa4?autoplay=1&rel=0" onmouseover="changeBGImage(5)" onmouseout="changeBGImage(0)">
+        <div class="tile__media">
+          <img class="tile__img" src="http://loopzine.tv/img/p_79.jpg" alt=""  />
+        </div>
+        <div class="tile__details">
+          <div class="tile__title" style="color:white">
+            KMFDM - WWIII<br>Ultra Heavy International Industrial Giants
+          </div>
+        </div>
+</a>
+      </div>
+</div>
+
+</body>
+
+</html>
 
